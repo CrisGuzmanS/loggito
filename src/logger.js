@@ -61,15 +61,14 @@ const logger = (path = '') => {
 
     instance.close = async function () {
 
+        // cerrar transports de Winston correctamente
         await originalClose();
 
-        for (const transport of this.transports) {
-            if (typeof transport.close === 'function') {
-                console.log('Closing logger...');
-                await transport.close();
-            }
-        }
+        // tu lógica adicional
         instance = null;
+        instancePath = null;
+
+        console.log("Logger closed.");
     };
 
     return instance;
