@@ -1,6 +1,6 @@
 {
   "name": "loggito",
-  "version": "0.0.3",
+  "version": "0.0.7",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -10,7 +10,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "moment": "^2.30.1",
-    "winston": "^3.18.3"
+    "moment": "2.30.1",
+    "winston": "3.12.0"
   }
 }
