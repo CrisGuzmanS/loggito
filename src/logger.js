@@ -57,7 +57,12 @@ const logger = (path = '') => {
         transports: [transportFile]
     });
 
+    const originalClose = instance.close.bind(instance);
+
     instance.close = async function () {
+
+        await originalClose();
+
         for (const transport of this.transports) {
             if (typeof transport.close === 'function') {
                 console.log('Closing logger...');
